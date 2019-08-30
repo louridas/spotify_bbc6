@@ -24,7 +24,7 @@ playlist_id = settings.get('playlist_id')
 
 # Get playlist tracks.
 
-page = requests.get('https://www.bbc.co.uk/sounds/play/brand:p071zbkq/p07lc3pw')
+page = requests.get('https://www.bbc.co.uk/sounds/play/p07lc3pw')
 
 soup = BeautifulSoup(page.text, 'html.parser')
 
@@ -90,7 +90,7 @@ headers = {
 if args.create: # Create list.
 
     payload = {
-        'name': 'Transcribed BBC Radio 6 Playlist',
+        'name': 'Transcribed BBC Radio 6 Music List',
     }
 
     r = requests.post(f'https://api.spotify.com/v1/users/{user}/playlists',
