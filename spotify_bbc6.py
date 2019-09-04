@@ -6,6 +6,7 @@ import sys
 import argparse
 
 parser = argparse.ArgumentParser()
+parser.add_argument('url', help='list URL')
 parser.add_argument('-s', '--settings',
                     help='settings file', default='settings.json')
 parser.add_argument('-c', '--create',
@@ -24,7 +25,7 @@ playlist_id = settings.get('playlist_id')
 
 # Get playlist tracks.
 
-page = requests.get('https://www.bbc.co.uk/sounds/play/p07lc3pw')
+page = requests.get(args.url)
 
 soup = BeautifulSoup(page.text, 'html.parser')
 
